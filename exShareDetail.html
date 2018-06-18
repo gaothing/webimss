@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/base.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/exShareDetail.css" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		iframe {
+			position: fixed;
+			left: 0;
+			top: 100%;
+			height: ;
+			display: none;
+			z-index: 99999999999!important;
+		}
+	</style>
+	<body>
+		<div id="box">
+			<div class="videoBox">
+				<div class="video">
+				<!--	<video id='v'  x-webkit-airplay="allow" playsinline="" webkit-playsinline="" poster="" preload="auto" loop></video>-->					
+					<video src="http://video.ums.uc.cn/w/1524558711/video/vugc/vugc/d7a6c955b6c11b2ff276e7551f022346-850274475-6-0-2.mp4?auth_key=1529330811-11cf85c00dcc4055976fac1c4a2d3a23-0-03894962d92ebf1f921655df1ccd1ae5"  x5-playsinline="" playsinline="" webkit-playsinline="" poster="" preload="auto" autoplay="autoplay"></video>
+				</div>
+				<div class="title">
+					<span>专家来啦</span>
+					
+					<img src="img/close.png" />
+				</div>
+				<div class="contentBox">
+					<ul>
+						<!--<li>痘博士祛痘示例进行中</li>
+					<li>在进行祛痘后，正确的使用痘博士提供的 特制美肤面膜进行配合治疗会让痘印不在 加深，持续使用会让逐渐减淡痘印
+					</li>-->
+						<li class="zanBox">
+							<img class="zanImg" src="img/zan.png" />
+							<div class="zan">赞</div>
+						</li>
+						<li>
+							<img src="img/gu731@2x.png" />
+							<div class="expert">专家</div>
+						</li>
+						<li class="colBox">
+							<img class="colImg" src="img/col1.png" />
+							<div class="col">收藏</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+			<!--提示框-->
+		<div id="outBox"></div>
+	</body>
+
+</html>
+<script src='easemob.js'></script>
+<script src="js/jquery.min.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+<script src="js/api.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/exShareDetail.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var heights = (7.5 / document.documentElement.clientWidth * document.documentElement.clientHeight - 1) + "rem"
+		$(".video").css({
+			"width": "100%",
+			"height": heights
+		})
+		$("#v").css({
+			"width": "auto",
+			"height": "100%"
+		})
+	
+	$(".expert").on("click", function() {
+
+		$("#box").css({
+			"background": "#fff"
+		}).find(".contentBox").css({
+			"display": "none"
+		});
+		$(".title").css({
+			"display": "block"
+		})
+		$("iframe").css({
+			"top": "5.42rem",
+			
+		})
+		$(".video").css({
+			"width": "100%",
+			"height": "4.48rem"
+		})
+		$("video").css({
+			"width": "auto",
+			"height": "100%"
+		})
+	})
+	$(".title").on("click", function() {
+
+		$("#box").css({
+			"background": "#000"
+		}).find(".contentBox").css({
+			"display": "block"
+		});
+		$(".title").css({
+			"display": "none"
+		})
+		$("iframe").css({
+			"top": "100%",
+			"display": "block"
+		})
+		var heights = (7.5 / document.documentElement.clientWidth * document.documentElement.clientHeight - 1) + "rem"
+		$(".video").css({
+			"width": "100%",
+			"height": heights
+		})
+		$("#v").css({
+			"width": "auto",
+			"height": "100%"
+		})
+	})
+</script>
+<script>
+	window.onload = function() {
+
+		var hright = 7.5 / document.documentElement.clientWidth * document.documentElement.clientHeight - 5.42 + "rem"
+		window.easemobim = window.easemobim || {};
+		easemobim.config = {
+			//设置为您的网页插件页面显示的configId的值
+			configId: '8e4cc637-c94b-44f8-aaa9-f5a6204db0af',
+			//环信移动客服域，固定值，请按照示例配置
+			domain: 'https://kefu.easemob.com',
+			//您网站上im.html文件的完整路径
+			path: '/webim/im.html?__hbt=1526870357900',
+			//访客插件static的路径
+			staticPath: '/webim/static',
+			hideKeyboard: true,
+			dialogWidth: "100%",
+			dialogHeight: hright,
+			visitor: {
+				trueName: '------',
+				qq: '567**34',
+				phone: '188****8888',
+				companyName: '环信',
+				userNickname: '我是冷',
+				description: '描述信息',
+				email: '123456@**.com'
+			},
+				extMsg: {
+				"cmd": {
+					"updateVisitorInfoSrc": {
+						"params": {
+							'userId': getParam('userId'),
+							'token': getParam("token"),
+							'userName': getParam("userName"),
+							'nickName': getParam("nickName"),
+							'sex': getParam("sex"),
+							'mobile': getParam("mobile"),
+							'source': getParam("source"),
+							'id': getParam("id")
+						}
+					}
+				}
+			}
+			
+		};
+		easemobim.bind()
+	}
+
+	var height = (7.5 / document.documentElement.clientWidth * document.documentElement.clientHeight - 1) + "rem"
+//	$("#v")[0].addEventListener("loadedmetadata", function() {
+//		console.log(this)
+//		document.getElementById('v').play();
+//		if(this.videoWidth > this.videoHeight) {
+//			$(".video").css({
+//				"width": "100%",
+//				"height": "auto"
+//			})
+//			$("#v").css({
+//				"width": "100%",
+//				"height": "auto"
+//			})
+//		} else {
+//			$("#v").css({
+//				"width": "auto",
+//				"height": height
+//			})
+//			$(".video").css({
+//				"width": "auto",
+//				"height": height
+//			})
+//		}
+//	});
+		
+	//一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以 
+//	document.getElementById('v').play();
+	//必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效 
+//	document.addEventListener("WeixinJSBridgeReady", function() {
+//		document.getElementById('v').play();
+//		document.getElementById('v').play();
+//	}, false);
+
+	//	-------------------------------------------------------
+</script>

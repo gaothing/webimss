@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+  <div class="videoBox">
+        <i class="fa fa-play-circle-o"></i>
+        <video id="video" src="img/WeChat_20180522105734.mp4" loop="loop" autoplay="autoplay"></video>
+        <canvas id="canvas" width="700" height="800"></canvas>
+    </div>
+</body>
+<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+  var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+
+            $("#video").hide();
+            $("i.fa").show();
+        }else{
+            $("i.fa").hide();
+            $("#canvas").hide();
+        }
+        var videoanimate;
+        var videoSrc='video';
+        var canvasSrc='canvas';
+        var videoW=1920;
+        var videoH=1080
+      
+var FixAndroidVideo = function(videoSrc, canvasSrc, videoW, videoH) {  
+    var TestVideo = document.getElementById(videoSrc);  
+    //获取canvas画布  
+  
+    var TestCanvas = document.getElementById(canvasSrc);  
+    //设置画布  
+    var TestCanvas2D = TestCanvas.getContext('2d');  
+    //设置setinterval定时器  
+    var TestVideoTimer = null;  
+    //监听播放  
+    TestVideo.addEventListener('play', function() {  
+        TestVideoTimer = setInterval(function() {  
+        	console.log(4135)
+            TestCanvas2D.drawImage(TestVideo, 0, 0, videoW, videoH);  
+        }, 20);  
+    }, false);  
+    //监听暂停  
+    TestVideo.addEventListener('pause', function() {  
+        clearInterval(TestVideoTimer);  
+    }, false);  
+}; 
+  FixAndroidVideo(videoSrc, canvasSrc, videoW, videoH)
+</script>
+</html>

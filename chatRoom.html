@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/base.min.css" />
+		<title></title>
+	</head>
+	<body>
+	</body>
+
+</html>
+<script src='easemob.js'></script>
+<script src="js/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		var hright = 7.5 / document.documentElement.clientWidth * document.documentElement.clientHeight - 4.48 + "rem"
+		window.easemobim = window.easemobim || {};
+		//获取url 参数
+		function getParam(name) {
+			var search = document.location.search;
+			var pattern = new RegExp("[?&]" + name + "\=([^&]+)", "g");
+			var matcher = pattern.exec(search);
+			var items = null;
+			if(null != matcher) {
+				try {
+					items = decodeURIComponent(decodeURIComponent(matcher[1]));
+				} catch(e) {
+					try {
+						items = decodeURIComponent(matcher[1]);
+					} catch(e) {
+						items = matcher[1];
+					}
+				}
+			}
+			return items;
+		};
+		easemobim.config = {
+			//设置为您的网页插件页面显示的configId的值
+			configId: 'dec00027-7ed4-43df-9909-5719b948726e',
+			//环信移动客服域，固定值，请按照示例配置
+			domain: 'https://kefu.easemob.com',
+			//您网站上im.html文件的完整路径
+			path: '/webim/im.html?__hbt=1526870357900',
+			//访客插件static的路径
+			staticPath: '/webim/static',
+			hideKeyboard: true,
+			dialogWidth: "100%",
+			dialogHeight: "100%",
+			visitor: {
+//				trueName: '------',
+//				qq: '567**34',
+//				phone: '188****8888',
+//				companyName: '环信',
+//				userNickname: '我是冷',
+//				description: '描述信息',
+//				email: '123456@**.com'
+			},
+			extMsg: {
+				"cmd": {
+					"updateVisitorInfoSrc": {
+						"params": {
+							'userId': getParam('userId'),
+							'token': getParam("token"),
+						}
+					}
+				}
+			}
+		};
+		easemobim.bind()
+	})
+
+	//	-------------------------------------------------------
+</script>

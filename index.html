@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)https://kefu.easemob.com/webim/im.html?configId=a115f75c-0dd0-4269-93ae-592b5200cfef&hideKeyboard=true -->
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=no">
+		<link href="css/em.css" rel="stylesheet"> </head>
+F
+	<body class=" em-mobile"> <iframe id="cross-origin-iframe" class="hide" src="tran.html"></iframe>
+		<script src="js/strop.js"></script>
+		<script src="js/main.js"></script>
+		<ul class="em-popuplist hide "></ul>
+		<div class="em-dialog hide ticket">
+			<div class="wrapper">
+				<h3>请填写以下内容以方便我们及时联系您</h3><input type="text" class="name" placeholder="姓名"><input type="text" class="phone" placeholder="电话"><input type="text" class="mail" placeholder="邮箱">
+				<div class="note-category hide">
+					<div class="em-select "><label class="em-select-desc"></label><span class="icon-arrow-up-down em-select-icon"></span></div>
+				</div><textarea spellcheck="false" placeholder="请输入留言"></textarea></div>
+			<div class="footer"><button class="cancel-btn">取消</button><button class="confirm-btn bg-color">留言</button></div>
+		</div>
+		<div id="em-article-container">
+			<div class="em-article-body ios-scroll">
+				<div id="em-article-close">
+					<span class="icon-back">返回会话窗</span>
+				</div>
+				<!-- <iframe></iframe> -->
+			</div>
+		</div>
+		<!-- 最小化时显示的按钮 -->
+		<div id="em-widgetPopBar" class="hide">
+			<a class="em-widget-pop-bar bg-color icon-easemob" href="javascript:;">undefined</a>
+		</div>
+
+		<!-- UI -->
+		<div id="em-kefu-webim-chat" class="em-widget-wrapper">
+
+			<!-- 标题栏 -->
+			<div class="em-widget-header bg-color border-color">
+				<!-- 用于拖动的浮层 -->
+				<p class="drag-bar"></p>
+
+				<div class="status-bar">
+					<!-- 会话列表按钮 -->
+					<span class="session-list-btn icon-list hide">
+				<span class="icon-circle notice hide"></span>
+					</span>
+
+					<!-- 坐席昵称 -->
+					<span class="em-widget-header-nickname">个人</span>
+
+					<!-- 坐席状态 -->
+					<span class="em-header-status-text"></span>
+
+					<!-- 坐席输入状态 -->
+					<span class="em-agent-input-state hide">正在输入...</span>
+				</div>
+
+				<!-- 最小化按钮 -->
+				<i title="关闭" class="icon-min btn-min border-color bg-hover-color-light hide"></i>
+
+				<!-- 静音开关 -->
+				<i class="icon-bell btn-audio hide"></i>
+
+				<!-- 输入框位置切换按钮 -->
+				<i class="btn-keyboard icon-keyboard-up hide"></i>
+			</div>
+
+			<!-- 信息栏 -->
+			<div class="em-widget-tip">
+				<span class="content"></span>
+				<i class="icon-close tip-close"></i>
+			</div>
+
+			<!-- 消息容器 -->
+			<div class="chat-wrapper" style="bottom: 78px;">
+				<!-- 广告条 -->
+				<div class="em-widget-tenant-logo hide">
+					<img>
+				</div>
+				<!-- <div class="chat-container"></div> -->
+				<div class="chat-container">
+					<div class="loading-tip hide">
+						<span class="icon-spin loading-btn"></span>
+						<span> 加载中...</span>
+					</div>
+					<div class="no-more-msg hide">
+						<span>没有更多消息</span>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- 输入框 -->
+			<div class="em-widget-send-wrapper">
+
+				<!-- 待接入人数状态 -->
+				<div class="queuing-number-status hide">当前排队人数为<label></label></div>
+
+				<!-- 工具栏 -->
+				<div class="toolbar">
+					<i class="em-bar-emoji icon-face e-face fg-hover-color" title="表情"></i>
+					<i class="em-widget-img icon-picture fg-hover-color" title="图片"></i>
+					<i class="em-widget-file icon-attachment fg-hover-color" title="附件"></i>
+					<i class="em-widget-note icon-note fg-hover-color" title="留言"></i>
+					<i class="icon-video fg-hover-color em-video-invite hide" title="视频通话"></i>
+					<i class="icon-flower fg-hover-color em-widget-satisfaction hide" title="评价客服"></i>
+					<i class="icon-headset fg-hover-color em-widget-to-kefu hide" title="转人工"></i>
+				</div>
+
+				<!-- 文件输入 -->
+				<input type="file" class="upload-file-container">
+				<!-- 图片输入 -->
+				<input type="file" class="upload-img-container" accept="image/jpg,image/gif,image/jpeg,image/png">
+
+				<textarea class="em-widget-textarea" spellcheck="false" placeholder="点击输入内容..." style="height: 34px;"></textarea>
+				<span class="em-widget-send bg-color disabled">发送</span>
+			</div>
+
+			<!-- 信息提示框 -->
+			<div class="em-widget-error-prompt hide">
+				<span></span>
+			</div>
+
+			<!-- 图片查看 -->
+			<div class="img-view hide">
+				<img>
+				<span class="ios-load hide"><span>长按图片保存到本地</span></span>
+				<a class="android-load hide" download=""><span class="icon-download"></span></a>
+
+			</div>
+			<div class="emoji-panel e-face hide" style="top: auto; bottom: 78px;">
+				<div class="page-container">
+					<ul class="system emoji-container"></ul>
+				</div>
+				<div class="navigator-wrapper e-face hide">
+					<div class="navigator-container e-face"></div>
+					<li class="scroll-left icon-corner-left e-face disabled"></li>
+					<li class="scroll-right icon-corner-right e-face disabled"></li>
+				</div>
+			</div>
+		</div>
+		<div class="em-dialog hide mini paste-image"><img>
+			<div class="footer"><button class="cancel-btn">取消</button><button class="confirm-btn bg-color">发送</button></div>
+		</div>
+		<div class="em-dialog hide session-list">
+			<ul>
+				<li class="session-item" data-id="default"><img class="avatar" src="./im_files/default_avatar.png"><span class="name">undefined</span><span class="latest-message"></span><span class="latest-timestamp"></span><span class="unread-count hide"></span></li>
+			</ul>
+		</div>
+	</body>
+
+</html>
