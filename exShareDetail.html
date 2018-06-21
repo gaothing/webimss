@@ -166,7 +166,10 @@
 		easemobim.bind()
 	}
 
-	var height = (7.5 / document.documentElement.clientWidth * document.documentElement.clientHeight - 1) + "rem"
+	var height = (7.5 / document.documentElement.clientWidth * document.documentElement.clientHeight - 1) + "rem";
+	$("#v").on("click",function(){
+		document.getElementById('v').play();
+	})
 	$("#v")[0].addEventListener("loadedmetadata", function() {
 //		console.log(this)
 		document.getElementById('v').play();
