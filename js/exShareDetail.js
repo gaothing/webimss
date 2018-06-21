@@ -40,7 +40,7 @@ $.ajax({
 			collectNum = res.data.collectNum;
 			$(".video video").attr('src', res.data.videoUrl)
 				.parent().parent()
-				.find(".title").find("span").text(res.data.title).next()
+				.find(".title").find("span").text(res.data.title).end().next()
 				.find(".zan").text("赞·" + praiseNum).end()
 				.find(".col").text("收藏·" + collectNum);
 			var zanState = '';
@@ -62,7 +62,7 @@ $.ajax({
 		}
 	},
 	fail: function(e) {
-		console.log(e)
+		alert("网络异常")
 	}
 });
 //	点赞/取消点赞
@@ -93,7 +93,7 @@ $(".contentBox .zanBox").on("click", function() {
 
 			},
 			fail: function(e) {
-				console.log(e)
+				alert("网络异常")
 			}
 		});
 	} else {
@@ -121,7 +121,7 @@ $(".contentBox .zanBox").on("click", function() {
 				}
 			},
 			fail: function(e) {
-				console.log(e)
+				alert("网络异常")
 			}
 		});
 	}
@@ -156,7 +156,7 @@ $(".contentBox .colBox").on("click", function() {
 
 			},
 			fail: function(e) {
-				console.log(e)
+			alert("网络异常")
 			}
 		});
 	} else {
@@ -174,7 +174,7 @@ $(".contentBox .colBox").on("click", function() {
 //				request.setRequestHeader("token", getParam('token'));
 //			},
 			success: function(res) {
-				console.log(res)
+//				console.log(res)
 				if(res.code == 0) {
 					collect=0
 					collectNum=Number(collectNum)-1;
@@ -185,6 +185,7 @@ $(".contentBox .colBox").on("click", function() {
 			},
 			fail: function(e) {
 				console.log(e)
+				alert("网络异常")
 			}
 		});
 	}

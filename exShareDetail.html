@@ -22,7 +22,7 @@
 			<div class="videoBox">
 				<div class="video">
 				<!--	<video id='v'  x-webkit-airplay="allow" playsinline="" webkit-playsinline="" poster="" preload="auto" loop></video>-->					
-					<video src="http://video.ums.uc.cn/w/1524558711/video/vugc/vugc/d7a6c955b6c11b2ff276e7551f022346-850274475-6-0-2.mp4?auth_key=1529330811-11cf85c00dcc4055976fac1c4a2d3a23-0-03894962d92ebf1f921655df1ccd1ae5"  x5-playsinline="" playsinline="" webkit-playsinline="" poster="" preload="auto" autoplay="autoplay"></video>
+					<video src="https://douboshi.oss-cn-beijing.aliyuncs.com/20180621/ddc12815bd6a479a9b2e1c29f72632f6.mp4"  x5-playsinline="" playsinline="isiPhoneShowPlaysinline" webkit-playsinline="isiPhoneShowPlaysinline"  x-webkit-airplay poster="" preload="auto" autoplay="autoplay"></video>
 				</div>
 				<div class="title">
 					<span>专家来啦</span>
@@ -57,7 +57,7 @@
 </html>
 <script src='easemob.js'></script>
 <script src="js/jquery.min.js"></script>
-<script src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+<script src="js/wx.js"></script>
 <script src="js/api.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/exShareDetail.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
@@ -130,9 +130,9 @@
 			//环信移动客服域，固定值，请按照示例配置
 			domain: 'https://kefu.easemob.com',
 			//您网站上im.html文件的完整路径
-			path: '/webim/im.html?__hbt=1526870357900',
+			path: '/webimss/im.html?userHead='+getParam("userHead")+'&c=0',
 			//访客插件static的路径
-			staticPath: '/webim/static',
+			staticPath: '/webimss/static',
 			hideKeyboard: true,
 			dialogWidth: "100%",
 			dialogHeight: hright,
