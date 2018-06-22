@@ -22,7 +22,7 @@
 			<div class="videoBox">
 				<div class="video">
 				<!--	<video id='v'  x-webkit-airplay="allow" playsinline="" webkit-playsinline="" poster="" preload="auto" loop></video>-->					
-					<video  id="v" src="https://douboshi.oss-cn-beijing.aliyuncs.com/20180621/ddc12815bd6a479a9b2e1c29f72632f6.mp4"  x5-playsinline="" playsinline="isiPhoneShowPlaysinline" webkit-playsinline="isiPhoneShowPlaysinline"  x-webkit-airplay poster="" preload="auto" autoplay="autoplay"></video>
+					<video  id="v" src="https://douboshi.oss-cn-beijing.aliyuncs.com/20180621/ddc12815bd6a479a9b2e1c29f72632f6.mp4"  controls="controls" controls="" x5-playsinline="" playsinline="" webkit-playsinline="" poster="" preload="auto" autoplay="autoplay"></video>
 				</div>
 				<div class="title">
 					<span>专家来啦</span>
@@ -60,6 +60,8 @@
 <script src="js/wx.js"></script>
 <script src="js/api.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/exShareDetail.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/mediaelement.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/testforfiles.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	var heights = (7.5 / document.documentElement.clientWidth * document.documentElement.clientHeight - 1) + "rem"
 		$(".video").css({
@@ -203,4 +205,20 @@
 //	}, false);
 
 	//	-------------------------------------------------------
+	MediaElement('v', {success: function(me) {
+	
+	me.play();
+	
+//	me.addEventListener('timeupdate', function() {
+//		document.getElementById('time').innerHTML = me.currentTime;
+//	}, false);
+	
+	document.getElementById('v')['onclick'] = function() {
+		if (me.paused)
+			me.play();
+		else
+			me.pause();
+	};
+
+}});
 </script>
