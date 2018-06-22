@@ -72,7 +72,7 @@
 			"width": "auto",
 			"height": "100%"
 		})
-	
+//	点击咨询按钮
 	$(".expert").on("click", function() {
 
 		$("#box").css({
@@ -96,8 +96,8 @@
 			"height": "100%"
 		})
 	})
+//	关闭聊天
 	$(".title").on("click", function() {
-
 		$("#box").css({
 			"background": "#000"
 		}).find(".contentBox").css({
@@ -139,13 +139,13 @@
 			dialogWidth: "100%",
 			dialogHeight: hright,
 			visitor: {
-				trueName: '------',
-				qq: '567**34',
-				phone: '188****8888',
-				companyName: '环信',
-				userNickname: '我是冷',
-				description: '描述信息',
-				email: '123456@**.com'
+//				trueName: '------',
+//				qq: '567**34',
+//				phone: '188****8888',
+//				companyName: '环信',
+//				userNickname: '我是冷',
+//				description: '描述信息',
+//				email: '123456@**.com'
 			},
 				extMsg: {
 				"cmd": {
@@ -172,29 +172,29 @@
 //	$("#v").on("click",function(){
 //		document.getElementById('v').play();
 //	})
-//	$("#v")[0].addEventListener("loadedmetadata", function() {
+	$("#v")[0].addEventListener("loadedmetadata", function() {
 //		console.log(this)
-//		document.getElementById('v').play();
-//		if(this.videoWidth > this.videoHeight) {
+		document.getElementById('v').play();
+		if(this.videoWidth > this.videoHeight) {
 //			$(".video").css({
 //				"width": "100%",
 //				"height": "auto"
 //			})
-//			$("#v").css({
-//				"width": "100%",
-//				"height": "auto"
-//			})
-//		} else {
-//			$("#v").css({
-//				"width": "auto",
-//				"height": height
-//			})
+			$("#v").css({
+				"width": "100%",
+				"height": "auto"
+			})
+		} else {
+			$("#v").css({
+				"width": "auto",
+				"height": height
+			})
 //			$(".video").css({
 //				"width": "auto",
 //				"height": height
 //			})
-//		}
-//	});
+		}
+	});
 		
 	//一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以 
 //	document.getElementById('v').play();
