@@ -1,6 +1,6 @@
 var ua = navigator.userAgent;
 var isAndroid = /android/i.test(ua); //android终端
-if(!isAndroid) {
+//if(!isAndroid) {
 	//执行代码.....
 	window.onresize = function() {
 		if(document.activeElement.tagName == "INPUT" || document.activeElement.tagName == "TEXTAREA") {
@@ -10,36 +10,58 @@ if(!isAndroid) {
 			}, 0);
 		}
 	}
-}
+//}
 
-$(function() {
-	function getParam(name) {
-	var search = document.location.search;
-	var pattern = new RegExp("[?&]" + name + "\=([^&]+)", "g");
-	var matcher = pattern.exec(search);
-	var items = null;
-	if(null != matcher) {
-		try {
-			items = decodeURIComponent(decodeURIComponent(matcher[1]));
-		} catch(e) {
-			try {
-				items = decodeURIComponent(matcher[1]);
-			} catch(e) {
-				items = matcher[1];
-			}
-		}
-	}
-	return items;
-};
-	var avatars=getParam("avatars");console.log(avatars)
-	console.log(12)
-	var t = setInterval(function() {
-		$(".avatars").attr("src", "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1875497233,2666278799&fm=27&gp=0.jpg")
-	}, 500)
-		$(".em-widget-left").find(".avatar").on("click",function(){
-			console.log()
-			wx.miniProgram.navigateTo({
-			url: '/pages2/skinRecord/skinRecord?id='+ getParam("reportId")
-		});
-		})
-})
+//$(function() {
+//	function getParam(name) {
+//		var search = document.location.search;
+//		var pattern = new RegExp("[?&]" + name + "\=([^&]+)", "g");
+//		var matcher = pattern.exec(search);
+//		var items = null;
+//		if(null != matcher) {
+//			try {
+//				items = decodeURIComponent(decodeURIComponent(matcher[1]));
+//			} catch(e) {
+//				try {
+//					items = decodeURIComponent(matcher[1]);
+//				} catch(e) {
+//					items = matcher[1];
+//				}
+//			}
+//		}
+//		return items;
+//	};
+//	var userHead = getParam("userHead")
+//	if(userHead=="null"){
+//		userHead="https://douboshi.oss-cn-beijing.aliyuncs.com/mobile/head.png"
+//	}
+//	var t = setInterval(function() {	
+//		$(".avatars").attr("src", userHead)
+//	}, 800)
+//
+//})
+//点击客服头像跳转微信小程序客服详情
+//window.onload = function() {
+//	$("body").on("click", ".chat-container .avatar", function(event) {
+//		console.log(0)
+////		 event.stopPropagation();
+//		var nickNamess = $("body .em-widget-header-nickname").text();
+////		alert(nickNamess)
+//		wx.miniProgram.navigateTo({
+//			url: '/pages/expertResume/expertResume'
+//		});
+//	})
+//}
+$('input[type="text"],textarea').on('click', function () {
+  var target = this;
+  setTimeout(function(){
+        target.scrollIntoViewIfNeeded();
+$(target).scrollintoview()
+        console.log('scrollIntoViewIfNeeded');
+      },400);
+});
+window.addEventListener('resize', function () {
+    if(document.activeElement.tagName === 'TEXTAREA'){
+        document.activeElement.scrollIntoView({behavior: "smooth"})
+    }
+   })
