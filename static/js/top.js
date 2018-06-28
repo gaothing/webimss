@@ -2,14 +2,14 @@ var ua = navigator.userAgent;
 var isAndroid = /android/i.test(ua); //android终端
 //if(!isAndroid) {
 	//执行代码.....
-	window.onresize = function() {
-		if(document.activeElement.tagName == "INPUT" || document.activeElement.tagName == "TEXTAREA") {
-			setTimeout(function() {
-				var top = document.activeElement.getBoundingClientRect().top;
-				window.scrollTo(0, top);
-			}, 0);
-		}
-	}
+//	window.onresize = function() {
+//		if(document.activeElement.tagName == "INPUT" || document.activeElement.tagName == "TEXTAREA") {
+//			setTimeout(function() {
+//				var top = document.activeElement.getBoundingClientRect().top;
+//				window.scrollTo(0, top);
+//			}, 0);
+//		}
+//	}
 //}
 
 //$(function() {
@@ -57,11 +57,11 @@ $('input[type="text"],textarea').on('click', function () {
   setTimeout(function(){
         target.scrollIntoViewIfNeeded();
 $(target).scrollintoview()
-        console.log('scrollIntoViewIfNeeded');
+//        console.log('scrollIntoViewIfNeeded');
       },400);
 });
-window.addEventListener('resize', function () {
-    if(document.activeElement.tagName === 'TEXTAREA'){
-        document.activeElement.scrollIntoView({behavior: "smooth"})
-    }
-   })
+//window.addEventListener('resize', function () {
+//  if(document.activeElement.tagName === 'TEXTAREA'){
+//      document.activeElement.scrollIntoView({behavior: "smooth"})
+//  }
+// })
