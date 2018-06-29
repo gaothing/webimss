@@ -65,3 +65,13 @@ window.addEventListener('resize', function () {
         document.activeElement.scrollIntoView({behavior: "smooth"})
     }
    })
+
+
+window.on('keyboardup', function (e) {
+    console.log(e.height)
+    alert(e.height)
+})
+
+window.on('keyboarddown', function (e) {
+       alert(e.height)
+})
