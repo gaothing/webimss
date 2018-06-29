@@ -41,17 +41,25 @@ var isAndroid = /android/i.test(ua); //android终端
 //
 //})
 //点击客服头像跳转微信小程序客服详情
-//window.onload = function() {
-//	$("body").on("click", ".chat-container .avatar", function(event) {
-//		console.log(0)
-////		 event.stopPropagation();
-//		var nickNamess = $("body .em-widget-header-nickname").text();
-////		alert(nickNamess)
-//		wx.miniProgram.navigateTo({
-//			url: '/pages/expertResume/expertResume'
-//		});
-//	})
-//}
+window.onload = function() {
+	alert("可见区域"+ocument.body.clientHeight)
+	$("body").find(".em-widget-textarea").on("click",function(){
+		console.log(12)
+		alert("可见区域2"+ocument.body.clientHeight)
+	})
+	$("body").find(".em-widget-textarea").focus(function(){
+		console.log("f")
+	})
+	$("body").on("click", ".chat-container .avatar", function(event) {
+		console.log(0)
+//		 event.stopPropagation();
+		var nickNamess = $("body .em-widget-header-nickname").text();
+//		alert(nickNamess)
+		wx.miniProgram.navigateTo({
+			url: '/pages/expertResume/expertResume'
+		});
+	})
+}
 $('input[type="text"],textarea').on('click', function () {
   var target = this;
   setTimeout(function(){
@@ -66,12 +74,3 @@ window.addEventListener('resize', function () {
     }
    })
 
-alert(5)
-window.on('keyboardup', function (e) {
-    console.log(e.height)
-    alert(1)
-})
-
-window.on('keyboarddown', function (e) {
-       alert(2)
-})
