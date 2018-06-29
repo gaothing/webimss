@@ -60,8 +60,8 @@ $(target).scrollintoview()
 //        console.log('scrollIntoViewIfNeeded');
       },400);
 });
-//window.addEventListener('resize', function () {
-//  if(document.activeElement.tagName === 'TEXTAREA'){
-//      document.activeElement.scrollIntoView({behavior: "smooth"})
-//  }
-// })
+window.addEventListener('resize', function () {
+    if(document.activeElement.tagName === 'TEXTAREA'){
+        document.activeElement.scrollIntoView({behavior: "smooth"})
+    }
+   })
