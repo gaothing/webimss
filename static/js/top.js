@@ -66,12 +66,15 @@ window.addEventListener('resize', function () {
     }
    })
 
+alert(3)
+var winHeight = $(window).height();   //获取当前页面高度
+$(window).resize(function(){
+   var thisHeight=$(this).height();
+    if(winHeight - thisHeight >50){
+         alert(1)
 
-window.on('keyboardup', function (e) {
-    console.log(e.height)
-    alert(e.height)
-})
+    }else{
+  alert(2)
 
-window.on('keyboarddown', function (e) {
-       alert(e.height)
-})
+    }
+});
