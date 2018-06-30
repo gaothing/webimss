@@ -60,17 +60,17 @@ window.onload = function() {
 		});
 	})
 }
-$('input[type="text"],textarea').on('click', function () {
-  var target = this;
-  setTimeout(function(){
-        target.scrollIntoViewIfNeeded();
-$(target).scrollintoview()
-//        console.log('scrollIntoViewIfNeeded');
-      },400);
-});
-window.addEventListener('resize', function () {
-    if(document.activeElement.tagName === 'TEXTAREA'){
-        document.activeElement.scrollIntoView({behavior: "smooth"})
-    }
-   })
+//$('input[type="text"],textarea').on('click', function () {
+//  var target = this;
+//  setTimeout(function(){
+//        target.scrollIntoViewIfNeeded();
+//$(target).scrollintoview()
+////        console.log('scrollIntoViewIfNeeded');
+//      },400);
+//});
+//window.addEventListener('resize', function () {
+//  if(document.activeElement.tagName === 'TEXTAREA'){
+//      document.activeElement.scrollIntoView({behavior: "smooth"})
+//  }
+// })
 
